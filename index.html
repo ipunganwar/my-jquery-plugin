@@ -10,7 +10,7 @@
   <body>
 
     <form action="" autocomplete="off">
-      <input type="text" name="invalid-email" placeholder="Your email address" value="admin@example" class="error">
+      <input type="text" name="invalid-email" placeholder="Your email address" class="error" value="tes@soba">
       <span class="error">Email address is not valid.</span>
     </form>
 
@@ -20,8 +20,8 @@
     <!-- demos -->
     <script>
       var email = $("input[name='invalid-email']")
-      email.keyup(function() {
-        if (!email.emailValidator()) {
+      email.keyup(function(){ 
+        if (!email.emailValidator(email.val())) {
           $(email).addClass("error").removeClass("success")
           $(email).next().fadeIn()
         } else {
